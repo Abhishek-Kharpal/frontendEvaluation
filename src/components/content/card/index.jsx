@@ -14,13 +14,13 @@ const Card = ({
   handleBookmark,
   isRegistered,
   areSeatsAvailable,
-  handleRegister
+  handleRegister,
+  fromDetail,
 }) => {
   const navigate = useNavigate();
   const handleDetail = (id) => {
     navigate(`${DETAIL_EVENT}/${id}`);
   };
-
   return (
     <div
       className='card basic-padding'
@@ -67,7 +67,7 @@ const Card = ({
               </div>
             )}
 
-            {(!isRegistered && !areSeatsAvailable )&& (
+            {!isRegistered && !areSeatsAvailable && (
               <div style={{ color: '#ECECAB', fontSize: '20px' }}>
                 <i
                   className='fa fa-times-circle'
@@ -93,9 +93,11 @@ const Card = ({
             )}
           </div>
         </div>
-        {areSeatsAvailable && (
+        {areSeatsAvailable && fromDetail && (
           <div style={{ display: 'flex', flexBasis: '100%', justifyContent: 'center' }}>
-            <div className='button' onClick={()=>handleRegister(id)}>{!isRegistered ? <p>REGISTER</p> : <p>UN-REGISTER</p>}</div>
+            <div className='button' onClick={() => handleRegister(id)}>
+              {!isRegistered ? <p>REGISTER</p> : <p>UN-REGISTER</p>}
+            </div>
           </div>
         )}
       </div>
@@ -114,6 +116,8 @@ Card.propTypes = {
   handleBookmark: PropTypes.func,
   isRegistered: PropTypes.bool,
   areSeatsAvailable: PropTypes.bool,
-  handleRegister: PropTypes.func
+  handleRegister: PropTypes.func,
+  fromDetail: PropTypes.bool,
 };
+
 export default Card;

@@ -58,6 +58,7 @@ const DetailEvent = () => {
           isRegistered={event.isRegistered}
           areSeatsAvailable={event.areSeatsAvailable}
           handleRegister={handleRegister}
+          fromDetail={true}
         />
       </div>
     </div>
