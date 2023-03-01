@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className='header basic-padding' style={{ backgroundColor: '#800080' }}>
       <p>
-        <strong onClick={handleNavigate}>EVENTIFY</strong>
+        <strong style={{cursor: 'pointer'}} onClick={handleNavigate}>EVENTIFY</strong>
       </p>
     </div>
   );

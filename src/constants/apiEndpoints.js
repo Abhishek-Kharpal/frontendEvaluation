@@ -14,3 +14,8 @@ export const GET_EVENT_BY_ID = (id) => ({
   url: `api/events/${id}`,
   method: 'GET',
 });
+
+export const UPDATE_REGISTER = (id) => ({
+  url: `api/events/${id}`,
+  method: 'PATCH',
+});

@@ -2,7 +2,7 @@ import Header from '../../components/header';
 import Card from '../../components/content/card';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { GET_EVENT_BY_ID, UPDATE_BOOKMARK } from '../../constants/apiEndpoints';
+import { GET_EVENT_BY_ID, UPDATE_BOOKMARK, UPDATE_REGISTER } from '../../constants/apiEndpoints';
 import makeRequest from '../../utils/makeRequest';
 import './style.css';
 
@@ -27,6 +27,20 @@ const DetailEvent = () => {
       isBookmarked: !event.isBookmarked,
     });
   };
+
+  const handleRegister = async (id) => {
+    await makeRequest(UPDATE_REGISTER(id), {
+      data: {
+        isRegistered: !event.isRegistered,
+      },
+    }).catch((e) => console.log(e));
+
+    setEvent({
+      ...event,
+      isRegistered: !event.isRegistered,
+    });
+  };
+
   return event ? (
     <div className='container'>
       <Header />
@@ -43,6 +57,7 @@ const DetailEvent = () => {
           handleBookmark={handleBookmark}
           isRegistered={event.isRegistered}
           areSeatsAvailable={event.areSeatsAvailable}
+          handleRegister={handleRegister}
         />
       </div>
     </div>
