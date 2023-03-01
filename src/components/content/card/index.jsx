@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './style.css';
 
-const Card = ({id,name,description,venue,datetime,image,isbookmarked})=>{
+const Card = ({id,name,description,venue,datetime,image,isbookmarked,handleBookmark})=>{
   return (
     <div className='card basic-padding'>
       <div style={{height: '40%'}}>
@@ -33,8 +33,8 @@ const Card = ({id,name,description,venue,datetime,image,isbookmarked})=>{
           <div>
             {
               (isbookmarked)
-                ?<i className='fa fa-bookmark-o' style={{fontSize: '30px', color: '#EA8282'}}></i>
-                :<i className='fa fa-bookmark' style={{fontSize: '30px', color: '#EA8282'}}></i>
+                ?<i className='fa fa-bookmark-o' onClick={()=>handleBookmark(id)} style={{fontSize: '30px', color: '#EA8282',cursor: 'pointer'}}></i>
+                :<i className='fa fa-bookmark' onClick={()=>handleBookmark(id)} style={{fontSize: '30px', color: '#EA8282', cursor: 'pointer'}}></i>
             }
           </div>
         </div>
@@ -50,6 +50,7 @@ Card.propTypes = {
   venue: PropTypes.string.isRequired,
   datetime: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  isbookmarked: PropTypes.bool.isRequired
+  isbookmarked: PropTypes.bool.isRequired,
+  handleBookmark: PropTypes.func.isRequired
 };
 export default Card;

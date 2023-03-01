@@ -5,3 +5,7 @@ export const GET_ALL_EVENTS = {
   method: 'GET',
 };
 
+export const UPDATE_BOOKMARK = (id)=>({
+  url: `api/events/${id}`,
+  method: 'PATCH'
+});

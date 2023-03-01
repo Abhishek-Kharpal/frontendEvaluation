@@ -20,9 +20,10 @@
 @media screen and (min-width: 768px) {
   .content-container{
     margin: 0 auto;
-    width: 600px;
+    width: 620px;
   }
   .card-container{
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
