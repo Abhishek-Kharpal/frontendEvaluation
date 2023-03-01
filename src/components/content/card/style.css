@@ -41,3 +41,12 @@
     width: 280px;
   }
 }
+
+.button {
+  background-color: var(--white);
+  color: #800080;
+  font-weight: 900;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}

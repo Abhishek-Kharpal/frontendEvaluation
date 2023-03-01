@@ -50,7 +50,6 @@ const Content = () => {
             isbookmarked={event.isBookmarked}
             handleBookmark={handleBookmark}
             isRegistered={event.isRegistered}
-            areSeatsAvailable={event.areSeatsAvailable}
           />
         ))}
       </div>

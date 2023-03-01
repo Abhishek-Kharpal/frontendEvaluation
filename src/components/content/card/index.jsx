@@ -13,7 +13,7 @@ const Card = ({
   isbookmarked,
   handleBookmark,
   isRegistered,
-  areSeatsAvailable
+  areSeatsAvailable,
 }) => {
   const navigate = useNavigate();
   const handleDetail = (id) => {
@@ -65,20 +65,16 @@ const Card = ({
                 <strong>REGISTERED</strong>
               </div>
             )}
-            
-            {
-              ((!isRegistered)&&(!areSeatsAvailable))&&
-                (
-                  <div style={{ color: '#ECECAB', fontSize: '20px' }}>
-                      <i
-                        className='fa fa-times-circle'
-                        style={{ fontSize: '30px', color: '#ECECAB', cursor: 'pointer' }}
-                      ></i>{' '}
-                      <strong>NO SEATS AVAILABLE</strong>
-                  </div>
-                )
-            }
 
+            {!isRegistered && !areSeatsAvailable && (
+              <div style={{ color: '#ECECAB', fontSize: '20px' }}>
+                <i
+                  className='fa fa-times-circle'
+                  style={{ fontSize: '30px', color: '#ECECAB', cursor: 'pointer' }}
+                ></i>{' '}
+                <strong>NO SEATS AVAILABLE</strong>
+              </div>
+            )}
           </div>
           <div onClick={(e) => e.stopPropagation()}>
             {isbookmarked ? (
@@ -96,6 +92,11 @@ const Card = ({
             )}
           </div>
         </div>
+        {areSeatsAvailable && (
+          <div style={{ display: 'flex', flexBasis: '100%', justifyContent: 'center' }}>
+            <div className='button'>{!isRegistered ? <p>REGISTER</p> : <p>UN-REGISTER</p>}</div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -111,6 +112,6 @@ Card.propTypes = {
   isbookmarked: PropTypes.bool,
   handleBookmark: PropTypes.func,
   isRegistered: PropTypes.bool,
-  areSeatsAvailable: PropTypes.bool
+  areSeatsAvailable: PropTypes.bool,
 };
 export default Card;
