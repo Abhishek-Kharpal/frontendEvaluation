@@ -4,12 +4,12 @@ import Theme from '../../components/theme';
 
 import './style.css';
 
-const Home = ()=>{
+const Home = () => {
   return (
     <div className='container'>
-      <Header/>
-      <Content/>
-      <Theme/>
+      <Header />
+      <Content />
+      <Theme />
     </div>
   );
 };

@@ -1,8 +1,7 @@
 describe('when there is some error from backend', () => {
   afterEach(() => {
-    jest.clearAllMocks()
-  })
+    jest.clearAllMocks();
+  });
 
-  xit('should return error response', () => {
-  })
-})
+  xit('should return error response', () => {});
+});

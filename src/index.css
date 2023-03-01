@@ -7,19 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root{
-  --grey: #9B9999;
-  --white: #FFFFFF;
-  --yellow: #ECECAB;
-  --red: #EA8282;
-  --green: #A0F3AD;
+:root {
+  --grey: #9b9999;
+  --white: #ffffff;
+  --yellow: #ececab;
+  --red: #ea8282;
+  --green: #a0f3ad;
 }
 
-.basic-padding{
+.basic-padding {
   padding-left: 10px;
   padding-right: 20px;
 }
 
-.basic-margin{
-  margin: 10px
+.basic-margin {
+  margin: 10px;
 }

@@ -1,43 +1,43 @@
-.card{
+.card {
   height: 490px;
   margin-bottom: 5px;
 }
 
-.card img{
+.card img {
   object-fit: cover;
   border-radius: 10px;
   border-bottom-left-radius: 0%;
   border-bottom-right-radius: 0%;
 }
 
-.card-content{
+.card-content {
   display: flex;
   flex-direction: column;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-.handle-overflow-desc{
+.handle-overflow-desc {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.handle-overflow-venue{
+.handle-overflow-venue {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.card-icons{
+.card-icons {
   display: flex;
   justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
-  .card{
+  .card {
     width: 280px;
   }
 }

@@ -1,14 +1,14 @@
-.search{
+.search {
   display: flex;
   flex-direction: row;
 }
 
-.search>input{
+.search > input {
   width: 100px;
 }
 
 @media screen and (min-width: 768px) {
-  .search>input{
+  .search > input {
     width: 180px;
   }
 }

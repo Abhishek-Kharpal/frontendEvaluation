@@ -1,5 +1,3 @@
 describe('when user renders the content', () => {
-  xit('should render cards', () => {
-    
-  })
-})
+  xit('should render cards', () => {});
+});

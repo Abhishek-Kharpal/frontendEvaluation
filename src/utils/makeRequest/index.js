@@ -2,8 +2,12 @@ import { BACKEND_URL } from '../../constants/apiEndpoints';
 import { ERROR_ROUTE } from '../../constants/routes';
 import axios from 'axios';
 
-const makeRequest = async (apiEndPoint = { url: ' ', method: ' ' }, dynamicContent = {}, navigate) => {
-  try{
+const makeRequest = async (
+  apiEndPoint = { url: ' ', method: ' ' },
+  dynamicContent = {},
+  navigate,
+) => {
+  try {
     const requestBody = {
       baseURL: BACKEND_URL,
       url: apiEndPoint.url,
@@ -12,15 +16,12 @@ const makeRequest = async (apiEndPoint = { url: ' ', method: ' ' }, dynamicConte
     };
     const { data } = await axios(requestBody);
     return data;
-  }
-  catch(e){
-    if(navigate)
-    {
-      const errorStatus = (e.error);
-      if(errorStatus){
+  } catch (e) {
+    if (navigate) {
+      const errorStatus = e.error;
+      if (errorStatus) {
         navigate(`${ERROR_ROUTE}/${errorStatus}`);
-      }
-      else{
+      } else {
         navigate(ERROR_ROUTE);
       }
     }

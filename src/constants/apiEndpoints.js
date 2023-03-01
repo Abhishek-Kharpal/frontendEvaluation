@@ -5,12 +5,12 @@ export const GET_ALL_EVENTS = {
   method: 'GET',
 };
 
-export const UPDATE_BOOKMARK = (id)=>({
+export const UPDATE_BOOKMARK = (id) => ({
   url: `api/events/${id}`,
-  method: 'PATCH'
+  method: 'PATCH',
 });
 
-export const GET_EVENT_BY_ID = (id)=>({
+export const GET_EVENT_BY_ID = (id) => ({
   url: `api/events/${id}`,
-  method: 'GET'
+  method: 'GET',
 });

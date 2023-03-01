@@ -1,28 +1,27 @@
-.content-container{
+.content-container {
   flex-grow: 1;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
 }
 
-.query{
+.query {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.card-container{
+.card-container {
   display: flex;
   flex-direction: column;
 }
 
-
 @media screen and (min-width: 768px) {
-  .content-container{
+  .content-container {
     margin: 0 auto;
     width: 620px;
   }
-  .card-container{
+  .card-container {
     flex-direction: row;
     flex-wrap: wrap;
   }

@@ -1,4 +1,3 @@
 describe('when render header', () => {
-  xit('should render EVENTIFY text', () => {
-  })
-})
+  xit('should render EVENTIFY text', () => {});
+});
