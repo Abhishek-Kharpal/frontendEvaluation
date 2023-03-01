@@ -1,0 +1,33 @@
+.card{
+  height: 480px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--white);
+}
+
+.card img{
+  object-fit: cover;
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.handle-overflow-desc{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.handle-overflow-venue{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-icons{
+  display: flex;
+  justify-content: space-around;
+}
