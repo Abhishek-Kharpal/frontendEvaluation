@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { DETAIL_EVENT } from '../../../constants/routes';
 import './style.css';
 
-const Card = ({id,name,description,venue,datetime,image,isbookmarked,handleBookmark})=>{
+const Card = ({id,name,description,venue,datetime,image,isbookmarked,handleBookmark,isRegistered})=>{
   const navigate = useNavigate();
   const handleDetail = (id)=>{
     navigate(`${DETAIL_EVENT}/${id}`);
@@ -34,8 +34,11 @@ const Card = ({id,name,description,venue,datetime,image,isbookmarked,handleBookm
         </div>
 
         <div className='card-icons basic-margin'>
-          <div>
-            {/* For register but in feature 3 */}
+          <div onClick={(e)=>e.stopPropagation()}>
+            {
+              (isRegistered)
+                &&<div style={{color: '#A0F3AD' ,fontSize: '20px'}}><i className="fa fa-check-circle" style={{fontSize: '30px', color: '#A0F3AD',cursor: 'pointer'}}></i> <strong>REGISTERED</strong></div>
+            }
           </div>
           <div onClick={(e)=>e.stopPropagation()}>
             {
@@ -58,6 +61,7 @@ Card.propTypes = {
   datetime: PropTypes.string,
   image: PropTypes.string,
   isbookmarked: PropTypes.bool,
-  handleBookmark: PropTypes.func
+  handleBookmark: PropTypes.func,
+  isRegistered: PropTypes.bool
 };
 export default Card;

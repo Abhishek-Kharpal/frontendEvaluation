@@ -39,7 +39,7 @@ const Content = ()=>{
         <Search/>
       </div>
       <div className='card-container'>
-        {events.map((event)=><Card key={event.id} id={event.id} name={event.name} description={event.description} venue={event.venue} datetime={event.datetime} image={event.imgUrl} isbookmarked={event.isBookmarked} handleBookmark={handleBookmark}/>)}
+        {events.map((event)=><Card key={event.id} id={event.id} name={event.name} description={event.description} venue={event.venue} datetime={event.datetime} image={event.imgUrl} isbookmarked={event.isBookmarked} handleBookmark={handleBookmark} isRegistered={event.isRegistered}/>)}
       </div>
     </div>
   ):(

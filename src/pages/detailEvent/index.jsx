@@ -32,7 +32,7 @@ const DetailEvent = ()=>{
     <div className='container'>
       <Header/>
       <div className='card-container basic-margin'>
-        <Card key={event.id} id={event.id} name={event.name} description={event.description} venue={event.venue} datetime={event.datetime} image={event.imgUrl} isbookmarked={event.isBookmarked} handleBookmark={handleBookmark}/>
+        <Card key={event.id} id={event.id} name={event.name} description={event.description} venue={event.venue} datetime={event.datetime} image={event.imgUrl} isbookmarked={event.isBookmarked} handleBookmark={handleBookmark} isRegistered={event.isRegistered}/>
       </div>
     </div>
   ):(
