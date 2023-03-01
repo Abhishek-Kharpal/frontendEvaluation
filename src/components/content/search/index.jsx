@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './style.css';
 
-const Search = ({setSearch,search,handleSearch}) => {
+const Search = ({ setSearch, search, handleSearch }) => {
   return (
     <div className='search basic-padding'>
       <input
@@ -14,7 +14,9 @@ const Search = ({setSearch,search,handleSearch}) => {
           borderRadius: '5px',
         }}
         value={search}
-        onChange={(e)=>{setSearch(e.target.value)}}
+        onChange={(e) => {
+          setSearch(e.target.value);
+        }}
       />
       <i
         className='fa fa-search'
@@ -25,10 +27,10 @@ const Search = ({setSearch,search,handleSearch}) => {
   );
 };
 
-Search.propTypes={
+Search.propTypes = {
   setSearch: PropTypes.func,
   search: PropTypes.string,
-  handleSearch: PropTypes.func
+  handleSearch: PropTypes.func,
 };
 
 export default Search;
