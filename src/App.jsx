@@ -1,7 +1,7 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import { HOME_ROUTE,ERROR_ROUTE } from './constants/routes';
 import Home from './pages/home';
-import PageNotFound from './pages/PageNotFound';
+import PageNotFound from './pages/pageNotFound';
 import Error from './pages/Error'
 
 function App() {
