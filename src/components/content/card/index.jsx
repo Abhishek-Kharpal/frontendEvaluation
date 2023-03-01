@@ -13,6 +13,7 @@ const Card = ({
   isbookmarked,
   handleBookmark,
   isRegistered,
+  areSeatsAvailable
 }) => {
   const navigate = useNavigate();
   const handleDetail = (id) => {
@@ -64,6 +65,20 @@ const Card = ({
                 <strong>REGISTERED</strong>
               </div>
             )}
+            
+            {
+              ((!isRegistered)&&(!areSeatsAvailable))&&
+                (
+                  <div style={{ color: '#ECECAB', fontSize: '20px' }}>
+                      <i
+                        className='fa fa-times-circle'
+                        style={{ fontSize: '30px', color: '#ECECAB', cursor: 'pointer' }}
+                      ></i>{' '}
+                      <strong>NO SEATS AVAILABLE</strong>
+                  </div>
+                )
+            }
+
           </div>
           <div onClick={(e) => e.stopPropagation()}>
             {isbookmarked ? (
@@ -96,5 +111,6 @@ Card.propTypes = {
   isbookmarked: PropTypes.bool,
   handleBookmark: PropTypes.func,
   isRegistered: PropTypes.bool,
+  areSeatsAvailable: PropTypes.bool
 };
 export default Card;

@@ -42,6 +42,7 @@ const DetailEvent = () => {
           isbookmarked={event.isBookmarked}
           handleBookmark={handleBookmark}
           isRegistered={event.isRegistered}
+          areSeatsAvailable={event.areSeatsAvailable}
         />
       </div>
     </div>
