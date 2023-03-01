@@ -9,3 +9,8 @@ export const UPDATE_BOOKMARK = (id)=>({
   url: `api/events/${id}`,
   method: 'PATCH'
 });
+
+export const GET_EVENT_BY_ID = (id)=>({
+  url: `api/events/${id}`,
+  method: 'GET'
+});

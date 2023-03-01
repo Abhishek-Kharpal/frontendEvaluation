@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
+import { DETAIL_EVENT } from '../../../constants/routes';
 import './style.css';
 
 const Card = ({id,name,description,venue,datetime,image,isbookmarked,handleBookmark})=>{
+  const navigate = useNavigate();
+  const handleDetail = (id)=>{
+    navigate(`${DETAIL_EVENT}/${id}`);
+  }
+
   return (
-    <div className='card basic-padding'>
+    <div className='card basic-padding' onClick={()=>{handleDetail(id)}}>
       <div style={{height: '40%'}}>
         <img src={image} alt='event-image' width='100%' height='99%'/>
       </div>
@@ -30,7 +37,7 @@ const Card = ({id,name,description,venue,datetime,image,isbookmarked,handleBookm
           <div>
             {/* For register but in feature 3 */}
           </div>
-          <div>
+          <div onClick={(e)=>e.stopPropagation()}>
             {
               (isbookmarked)
                 ?<i className='fa fa-bookmark-o' onClick={()=>handleBookmark(id)} style={{fontSize: '30px', color: '#EA8282',cursor: 'pointer'}}></i>
@@ -44,13 +51,13 @@ const Card = ({id,name,description,venue,datetime,image,isbookmarked,handleBookm
 };
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  venue: PropTypes.string.isRequired,
-  datetime: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  isbookmarked: PropTypes.bool.isRequired,
-  handleBookmark: PropTypes.func.isRequired
+  id: PropTypes.number,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  venue: PropTypes.string,
+  datetime: PropTypes.string,
+  image: PropTypes.string,
+  isbookmarked: PropTypes.bool,
+  handleBookmark: PropTypes.func
 };
 export default Card;
