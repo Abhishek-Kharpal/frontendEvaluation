@@ -1,0 +1,12 @@
+.filter{
+  display: flex;
+  flex-direction: row;
+}
+
+.filter p{
+  color: #800080;
+  font-weight: 700;
+  font-size: 28px;
+  margin-top: 0;
+  margin-left: 5px;
+}

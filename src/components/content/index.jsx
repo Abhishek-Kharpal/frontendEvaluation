@@ -5,7 +5,7 @@ import './style.css';
 const Content = ()=>{
   return (
     <div className='content-container'>
-      <div className='query'>
+      <div className='query basic-padding' style={{marginTop: '10px'}}>
         <Filter/>
         <Search/>
       </div>
