@@ -5,5 +5,5 @@
 
 .query{
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
 }
