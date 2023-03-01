@@ -14,3 +14,12 @@ body {
   --red: #EA8282;
   --green: #A0F3AD;
 }
+
+.basic-padding{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.basic-margin{
+  margin: 10px
+}
