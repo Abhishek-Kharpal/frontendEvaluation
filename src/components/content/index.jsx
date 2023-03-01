@@ -10,6 +10,7 @@ import './style.css';
 const Content = () => {
   const [events, setEvents] = useState([]);
   const navigate = useNavigate();
+  const [search,setSearch] = useState('');
 
   useEffect(() => {
     makeRequest(GET_ALL_EVENTS, {}, navigate).then((res) => setEvents([...res]));
@@ -31,11 +32,17 @@ const Content = () => {
     setEvents([...events]);
   };
 
+  const handleSearch = ()=>{
+    const eventData = events.filter((event)=>event.name.includes(search));
+    setEvents([...eventData]);
+    setSearch('');
+  }
+
   return events ? (
     <div className='content-container'>
       <div className='query basic-padding' style={{ marginTop: '10px' }}>
         <Filter />
-        <Search />
+        <Search setSearch={setSearch} search={search} handleSearch={handleSearch}/>
       </div>
       <div className='card-container'>
         {events.map((event) => (
